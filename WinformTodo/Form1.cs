@@ -46,6 +46,7 @@ namespace WinformTodo
 
             // take todo and insert into my list
             TaskList.Add(myTodo);
+            fpTasks.Controls.Add(new TaskControls(myTodo));
 
             UpdateListBox();
 
@@ -55,7 +56,7 @@ namespace WinformTodo
         public void UpdateListBox()
         {
             // clear the contents of the list box
-            lbTaskList.Items.Clear();
+            //lbTaskList.Items.Clear();
 
             // transform the list
             var list = TaskList
@@ -67,7 +68,7 @@ namespace WinformTodo
             // read in the new contents
             for (int i = 0; i < list.Count; i++)
             {
-                lbTaskList.Items.Add(list[i].ToString());
+                //lbTaskList.Items.Add(list[i].ToString());
             }
 
             // cleanup if required
@@ -97,35 +98,35 @@ namespace WinformTodo
         {
             //MessageBox.Show($"Selected index is: {lbTaskList.SelectedIndex}");
 
-            int selectedIndex = lbTaskList.SelectedIndex;
-            string selectedItem = (string)lbTaskList.SelectedItem;
+           // int selectedIndex = lbTaskList.SelectedIndex;
+            //string selectedItem = (string)lbTaskList.SelectedItem;
 
-            if (selectedIndex == -1)
-            {
-                return;
-            }
+          //  if (selectedIndex == -1)
+            //{
+           //     return;
+           // }
 
 
-            if (selectedItem == null)
-            {
-                MessageBox.Show("No selected item at the index");
-                return;
-            }
+            //if (selectedItem == null)
+            //{
+             //   MessageBox.Show("No selected item at the index");
+              //  return;
+            //}
 
             // string format: # - 01-01-2025 - description - status: complete
-            int id = Int32.Parse(selectedItem.Split(" - ")[0]);
+            //int id = Int32.Parse(selectedItem.Split(" - ")[0]);
 
 
             // find the item in the list with the matching id, toggle its complete status
 
-            var todo = TaskList.Find(t => t.Id == id);
+            //var todo = TaskList.Find(t => t.Id == id);
 
 
-                if (todo != null) { 
+        //    if (todo != null) { 
             
-                    todo.IsDone = !todo.IsDone;
-                   UpdateListBox();
-                }
+       //       todo.IsDone = !todo.IsDone;
+         //          UpdateListBox();
+           //     }
            // process the data
         }
     }

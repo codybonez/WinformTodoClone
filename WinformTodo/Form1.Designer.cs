@@ -36,7 +36,7 @@
             lblTaskBoxLabel = new Label();
             txtTaskDescription = new TextBox();
             gbTaskList = new GroupBox();
-            lbTaskList = new ListBox();
+            fpTasks = new FlowLayoutPanel();
             groupBox1.SuspendLayout();
             gbTaskList.SuspendLayout();
             SuspendLayout();
@@ -99,7 +99,7 @@
             lblTaskBoxLabel.AutoSize = true;
             lblTaskBoxLabel.Location = new Point(6, 19);
             lblTaskBoxLabel.Name = "lblTaskBoxLabel";
-            lblTaskBoxLabel.Size = new Size(29, 15);
+            lblTaskBoxLabel.Size = new Size(30, 15);
             lblTaskBoxLabel.TabIndex = 1;
             lblTaskBoxLabel.Text = "Task";
             // 
@@ -113,7 +113,7 @@
             // 
             // gbTaskList
             // 
-            gbTaskList.Controls.Add(lbTaskList);
+            gbTaskList.Controls.Add(fpTasks);
             gbTaskList.Location = new Point(12, 123);
             gbTaskList.Name = "gbTaskList";
             gbTaskList.Size = new Size(346, 473);
@@ -121,14 +121,12 @@
             gbTaskList.TabStop = false;
             gbTaskList.Text = "Task List";
             // 
-            // lbTaskList
+            // fpTasks
             // 
-            lbTaskList.FormattingEnabled = true;
-            lbTaskList.Location = new Point(6, 22);
-            lbTaskList.Name = "lbTaskList";
-            lbTaskList.Size = new Size(334, 439);
-            lbTaskList.TabIndex = 0;
-            lbTaskList.SelectedIndexChanged += lbTaskList_SelectedIndexChanged;
+            fpTasks.Location = new Point(0, 22);
+            fpTasks.Name = "fpTasks";
+            fpTasks.Size = new Size(340, 445);
+            fpTasks.TabIndex = 0;
             // 
             // Form1
             // 
@@ -155,6 +153,6 @@
         private TextBox txtDueDate;
         private Button btnClear;
         private GroupBox gbTaskList;
-        private ListBox lbTaskList;
+        private FlowLayoutPanel fpTasks;
     }
 }
